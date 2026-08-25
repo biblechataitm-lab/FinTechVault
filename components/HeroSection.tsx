@@ -2,66 +2,69 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Landmark, CreditCard, ShieldCheck, Lock, ArrowUpRight, Search, DollarSign, RefreshCw, Zap, TrendingUp } from 'lucide-react';
+import { ShieldCheck, CreditCard, Landmark, Coins, TrendingUp, Lock, Search, ArrowRight, ArrowUpRight, CheckCircle2, Star, Users } from 'lucide-react';
 
-const PAYMENT_RAILS = [
+const SETTLEMENT_STREAMS = [
   {
-    id: 'fiat-instant',
-    name: 'FedNow & RTP Instant Rails',
-    network: 'US Banking • Real-Time',
-    status: 'Settled Sub-Second',
-    volume: '$1.8B/mo',
-    lastTx: '+$48,250.00 USD',
-    txMeta: 'ACH / Instant RTP Settlement • 240ms',
-    compliance: 'PCI-DSS L1 • Nacha Certified',
+    id: 'instant-fiat',
+    name: 'FedNow / RTP Instant Settlement',
+    type: 'Instant Fiat Rails',
+    volume: '$48,250.00 USD',
+    latency: '240ms',
+    compliance: 'SOC-2 Type II • Nacha Verified',
+    status: 'SETTLED',
+    txHash: '0x8f2a...c914',
   },
   {
     id: 'cross-border',
-    name: 'Cross-Border FX Engine',
-    network: 'Wise • SWIFT ISO 20022',
-    status: 'Real-Time FX Matrix',
-    volume: '$620M/mo',
-    lastTx: '+€14,800.00 EUR',
-    txMeta: 'Multi-Currency Clearing • Mid-Market Rate',
-    compliance: 'SOC-2 Type II • FinCEN Regulated',
+    name: 'Cross-Border FX Clearing Mesh',
+    type: 'SWIFT & SEPA Instant',
+    volume: '€14,800.00 EUR',
+    latency: '850ms',
+    compliance: 'PCI-DSS Level 1 • ISO 20022',
+    status: 'SETTLED',
+    txHash: '0x4e1b...99a0',
   },
   {
-    id: 'stablecoin-rails',
+    id: 'usdc-treasury',
     name: 'Programmable USDC Settlement',
-    network: 'Ethereum • Base • Solana',
-    status: 'Zero Counterparty Risk',
-    volume: '$410M/mo',
-    lastTx: '+$125,000.00 USDC',
-    txMeta: 'Smart Contract Escrow • 1.2s Finality',
-    compliance: 'Fully Backed 1:1 • Smart Contract Audited',
+    type: 'Ethereum L2 / Solana Treasury',
+    volume: '$125,000.00 USDC',
+    latency: '400ms',
+    compliance: 'Circle Mint Partner • Multi-Sig',
+    status: 'CONFIRMED',
+    txHash: '0x33d8...210f',
   },
 ];
 
 export function HeroSection() {
-  const [activeRailIndex, setActiveRailIndex] = useState(0);
+  const [activeStreamIndex, setActiveStreamIndex] = useState(0);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const currentRail = PAYMENT_RAILS[activeRailIndex];
+  const currentStream = SETTLEMENT_STREAMS[activeStreamIndex];
 
   return (
     <section className="fintech-hero">
+      <div className="fintech-ambient-glow" />
+
       <div className="fintech-hero-grid">
-        {/* Left: Financial Trust Proposition */}
+        {/* Left: Financial Institutional Value Prop */}
         <div className="fintech-hero-content">
-          <div className="fintech-trust-badge">
-            <ShieldCheck size={14} className="text-emerald-400" />
-            <span>Institutional FinTech & Payment Infrastructure Index</span>
+          <div className="fintech-badge">
+            <span className="fintech-shield-icon">🛡️</span>
+            <span>Institutional Financial Infrastructure • 2026</span>
+            <span className="fintech-badge-pill">SOC-2</span>
           </div>
 
           <h1 className="fintech-title">
-            The Institutional Index for <span className="fintech-gradient-text">Banking Rails</span> & Payment APIs.
+            The Trust Vault for <span className="fintech-emerald-text">Banking Rails</span>, Ledgers & Crypto APIs.
           </h1>
 
           <p className="fintech-lead">
-            Explore verified banking-as-a-service platforms, global payout rails, crypto settlement gateways, automated tax engines, and AML compliance stacks.
+            Curating high-security payment gateways, core banking rails, crypto settlement ledgers, automated KYC/AML platforms, and embedded finance software.
           </p>
 
-          {/* FinTech Search Box */}
+          {/* Search Box */}
           <form 
             action="/search" 
             method="GET" 
@@ -74,7 +77,7 @@ export function HeroSection() {
             <input
               type="text"
               name="q"
-              placeholder="Search payment gateways, KYC APIs, ledger engines..."
+              placeholder="Search 180+ payment rails, crypto ledgers, KYC tools..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="fintech-search-input"
@@ -84,26 +87,55 @@ export function HeroSection() {
             </button>
           </form>
 
-          {/* Payment Stacks */}
+          {/* Dual Action CTAs */}
+          <div className="fintech-cta-row">
+            <Link href="/category/finance" className="fintech-primary-btn">
+              Explore 180+ Financial Rails <ArrowRight size={15} />
+            </Link>
+            <Link href="/submit" className="fintech-secondary-btn">
+              Submit FinTech API
+            </Link>
+          </div>
+
+          {/* Social Proof */}
+          <div className="fintech-social-proof">
+            <div className="fintech-avatar-stack">
+              <span className="fin-avatar av-1">💳</span>
+              <span className="fin-avatar av-2">🏦</span>
+              <span className="fin-avatar av-3">💎</span>
+              <span className="fin-avatar av-4">🛡️</span>
+            </div>
+            <div className="fintech-proof-text">
+              <div className="fintech-proof-stars">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={12} className="fill-emerald-400 text-emerald-400" />
+                ))}
+                <span className="fintech-rating">4.9/5.0</span>
+              </div>
+              <span className="fintech-subtext">Trusted by 28,000+ FinTech leaders & payment architects</span>
+            </div>
+          </div>
+
+          {/* Niche Category Pills */}
           <div className="fintech-tags-row">
-            <span className="fintech-tags-label">Infrastructure:</span>
+            <span className="fintech-tags-label">Sectors:</span>
             <div className="fintech-tags-list">
               <Link href="/category/finance" className="fintech-tag-pill">
-                <CreditCard size={12} /> Payment Gateways
+                <CreditCard size={12} /> Payment Rails
               </Link>
               <Link href="/category/security" className="fintech-tag-pill">
-                <Lock size={12} /> KYC & AML
+                <ShieldCheck size={12} /> KYC / AML
               </Link>
-              <Link href="/category/developer-tools" className="fintech-tag-pill">
+              <Link href="/category/productivity" className="fintech-tag-pill">
                 <Landmark size={12} /> Core Banking
               </Link>
-              <Link href="/category/automation" className="fintech-tag-pill">
-                <Zap size={12} /> Billing Engines
+              <Link href="/category/ai" className="fintech-tag-pill">
+                <Coins size={12} /> USDC Treasury
               </Link>
             </div>
           </div>
 
-          {/* Financial Trust Metrics */}
+          {/* Institutional Metrics */}
           <div className="fintech-metrics-strip">
             <div className="fintech-metric-box">
               <span className="fintech-metric-val">$2.4B+</span>
@@ -111,67 +143,70 @@ export function HeroSection() {
             </div>
             <div className="fintech-metric-divider" />
             <div className="fintech-metric-box">
-              <span className="fintech-metric-val">SOC-2</span>
-              <span className="fintech-metric-desc">Type II Audited</span>
+              <span className="fintech-metric-val">180+</span>
+              <span className="fintech-metric-desc">Global Rails</span>
             </div>
             <div className="fintech-metric-divider" />
             <div className="fintech-metric-box">
-              <span className="fintech-metric-val">180+</span>
-              <span className="fintech-metric-desc">Global Rails</span>
+              <span className="fintech-metric-val">PCI-DSS</span>
+              <span className="fintech-metric-desc">Level 1 Compliant</span>
             </div>
           </div>
         </div>
 
-        {/* Right: Glassmorphic Banking Card & Settlement Ledger */}
+        {/* Right: Glassmorphic Banking Rails & Settlement Card */}
         <div className="fintech-ledger-card">
           <div className="ledger-card-header">
             <div className="ledger-title-group">
-              <span className="ledger-pulse-emerald" />
+              <span className="ledger-live-pulse" />
               <span className="ledger-header-title">Live Settlement Ledger</span>
             </div>
-            <span className="ledger-compliance-badge">PCI-DSS LEVEL 1</span>
+            <span className="ledger-status-pill">{currentStream.status}</span>
           </div>
 
-          {/* Rail Switcher Tabs */}
-          <div className="ledger-rail-tabs">
-            {PAYMENT_RAILS.map((rail, idx) => (
+          {/* Rail Stream Switcher */}
+          <div className="ledger-tabs-row">
+            {SETTLEMENT_STREAMS.map((stream, idx) => (
               <button
-                key={rail.id}
-                onClick={() => setActiveRailIndex(idx)}
-                className={`ledger-rail-btn ${activeRailIndex === idx ? 'active' : ''}`}
+                key={stream.id}
+                onClick={() => setActiveStreamIndex(idx)}
+                className={`ledger-tab-btn ${activeStreamIndex === idx ? 'active' : ''}`}
                 type="button"
               >
-                {rail.name}
+                {stream.name.split(' ')[0]}
               </button>
             ))}
           </div>
 
-          {/* Glassmorphic Balance & Settlement Preview */}
-          <div className="ledger-balance-preview">
-            <div className="ledger-balance-top">
-              <span className="ledger-network-label">{currentRail.network}</span>
-              <span className="ledger-status-tag">{currentRail.status}</span>
+          {/* Settlement Highlight Box */}
+          <div className="ledger-highlight-box">
+            <div className="ledger-val-row">
+              <span className="ledger-amount">{currentStream.volume}</span>
+              <span className="ledger-latency-tag">⚡ {currentStream.latency}</span>
             </div>
-            <div className="ledger-amount-row">
-              <span className="ledger-tx-amount">{currentRail.lastTx}</span>
-              <span className="ledger-volume-pill">{currentRail.volume}</span>
-            </div>
-            <span className="ledger-tx-meta">{currentRail.txMeta}</span>
+            <span className="ledger-stream-type">{currentStream.name}</span>
           </div>
 
-          {/* Compliance & Audit Bar */}
-          <div className="ledger-security-spec">
-            <div className="security-spec-row">
-              <Lock size={12} className="text-emerald-400" />
-              <span className="security-spec-text">{currentRail.compliance}</span>
+          {/* Transaction Metadata Grid */}
+          <div className="ledger-metadata-grid">
+            <div className="ledger-meta-item">
+              <span className="meta-label">Protocol & Compliance</span>
+              <span className="meta-val">{currentStream.compliance}</span>
+            </div>
+            <div className="ledger-meta-item">
+              <span className="meta-label">Verified Tx Hash</span>
+              <span className="meta-val font-mono">{currentStream.txHash}</span>
             </div>
           </div>
 
-          {/* Card Action Footer */}
+          {/* Card Footer Security Guarantee */}
           <div className="ledger-card-footer">
-            <span className="ledger-encryption-text">256-Bit Encrypted Vault</span>
+            <div className="ledger-sec-note">
+              <Lock size={12} className="text-emerald-400" />
+              <span>256-Bit Encrypted Financial Ledger</span>
+            </div>
             <Link href="/submit" className="ledger-submit-link">
-              List Your FinTech <ArrowUpRight size={13} />
+              Submit Rail <ArrowUpRight size={13} />
             </Link>
           </div>
         </div>
