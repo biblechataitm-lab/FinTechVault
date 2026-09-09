@@ -1,66 +1,43 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
-import { Search, ArrowRight, TrendingUp } from 'lucide-react';
+import React from 'react';
 
 export function HeroLanding() {
-  const heroRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const hero = heroRef.current;
-    if (!hero) return;
-    const children = hero.querySelectorAll('.ftv-animate');
-    children.forEach((el, i) => {
-      const htmlEl = el as HTMLElement;
-      htmlEl.style.opacity = '0';
-      htmlEl.style.transform = 'translateY(24px)';
-      setTimeout(() => {
-        htmlEl.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        htmlEl.style.opacity = '1';
-        htmlEl.style.transform = 'translateY(0)';
-      }, 100 + i * 100);
-    });
-  }, []);
-
   return (
-    <section ref={heroRef} className="ftv-hero">
-      <div className="ftv-hero-bg" aria-hidden="true" />
-      <div className="ftv-hero-container">
-        <div className="ftv-hero-content">
-          <div className="ftv-animate ftv-hero-badge">
-            <span>Financial Technology Intelligence</span>
-          </div>
-          <h1 className="ftv-animate ftv-hero-title">
-            Navigate the{' '}
-            <span className="ftv-accent-text">FinTech Landscape</span>
-          </h1>
-          <p className="ftv-animate ftv-hero-subtitle">
-            Discover 1,200+ financial technology products — from payment processors and lending APIs to compliance engines and crypto infrastructure.
-          </p>
-          <form
-            className="ftv-animate ftv-hero-search"
-            onSubmit={(e) => {
-              e.preventDefault();
-              const input = e.currentTarget.querySelector('input');
-              if (input?.value.trim()) {
-                window.location.href = `/search?q=${encodeURIComponent(input.value.trim())}`;
-              }
-            }}
-          >
-            <Search size={16} className="ftv-hero-search-icon" />
-            <input type="text" placeholder="Search fintech tools, payment APIs..." />
-            <button type="submit">Explore <ArrowRight size={14} /></button>
-          </form>
-          <div className="ftv-animate ftv-hero-tags">
-            <a href="/category/ai" className="ftv-tag">AI Finance</a>
-            <a href="/category/developer-tools" className="ftv-tag">Payment APIs</a>
-            <a href="/category/productivity" className="ftv-tag">Accounting</a>
-            <a href="/trends" className="ftv-tag ftv-tag-hot">
-              <TrendingUp size={12} /> Trending
-            </a>
+    <section class="vault-hero">
+  <div class="vault-hero-grid container">
+    <div class="vault-hero-left">
+      <div class="vault-security-tag">
+        <span class="vault-lock-dot"></span>
+        <span>256-BIT ENCRYPTED FINTECH DIRECTORY</span>
+      </div>
+      <h1 class="vault-title">
+        The High-Security <br/><span class="vault-gold">FinTech Vault</span>
+      </h1>
+      <p class="vault-desc">
+        Curating bank-grade payment gateways, double-entry ledger platforms, automated treasury engines, and compliance software.
+      </p>
+      <div class="vault-search-box">
+        <input type="text" placeholder="Search payment rails, ledger APIs, KYC tools..." class="vault-input" />
+        <button class="vault-btn">Unlock</button>
+      </div>
+      <div class="vault-ticker-tape">
+        <span class="ticker-item"><span class="ticker-green">▲ ACH/RTP:</span> 99.999%</span>
+        <span class="ticker-item"><span class="ticker-gold">★ SOC2:</span> VERIFIED</span>
+        <span class="ticker-item"><span class="ticker-green">▲ FEDNOW:</span> ACTIVE</span>
+      </div>
+    </div>
+    <div class="vault-hero-right">
+      <div class="vault-door-graphic">
+        <div class="vault-outer-ring">
+          <div class="vault-wheel"></div>
+          <div class="vault-core-key">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#e8a55a" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
   );
 }

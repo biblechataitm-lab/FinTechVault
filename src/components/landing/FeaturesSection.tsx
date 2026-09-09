@@ -1,35 +1,31 @@
 'use client';
 
 import React from 'react';
-import { Shield, Zap, BarChart3, Lock, Globe, TrendingUp } from 'lucide-react';
-
-const FEATURES = [
-  { icon: Shield, title: 'Compliance Verified', desc: 'PCI-DSS, SOC2, and regulatory compliance status for every product.' },
-  { icon: Zap, title: 'API Benchmarks', desc: 'Latency, uptime, and throughput benchmarks for payment processors.' },
-  { icon: BarChart3, title: 'Market Intelligence', desc: 'Funding rounds, market share, and competitive landscape analysis.' },
-  { icon: Lock, title: 'Security Ratings', desc: 'Independent security audit scores and vulnerability history.' },
-  { icon: Globe, title: 'Global Coverage', desc: 'Multi-currency support, regional availability, and licensing data.' },
-  { icon: TrendingUp, title: 'FinTech Trends', desc: 'Emerging categories — embedded finance, BNPL, and DeFi infrastructure.' },
-];
 
 export function FeaturesSection() {
   return (
-    <section className="ftv-features">
-      <div className="ftv-features-header">
-        <h2 className="ftv-section-title">
-          Why <span className="ftv-accent-text">FinTechVault</span>
-        </h2>
-        <p className="ftv-section-subtitle">More than a directory — a curated ecosystem built for your workflow.</p>
-      </div>
-      <div className="ftv-features-grid">
-        {FEATURES.map((f) => (
-          <div key={f.title} className="ftv-feature-card">
-            <div className="ftv-feature-icon"><f.icon size={22} /></div>
-            <h3 className="ftv-feature-title">{f.title}</h3>
-            <p className="ftv-feature-desc">{f.desc}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+    <section class="vault-compliance container">
+  <div class="vault-section-title">
+    <span class="vault-gold-tag">// REGULATORY STANDARDS</span>
+    <h2>Bank-Grade Compliance Matrix</h2>
+  </div>
+  <div class="vault-grid-3">
+    <div class="vault-card">
+      <div class="v-badge">PCI-DSS L1</div>
+      <h3>Cardholder Data Security</h3>
+      <p>Zero-compromise tokenization ensuring raw credit card details never touch your server logs.</p>
+    </div>
+    <div class="vault-card">
+      <div class="v-badge">SOC2 TYPE II</div>
+      <h3>Continuous Telemetry</h3>
+      <p>Automated evidence collection across cloud infrastructure, database encryption, and access controls.</p>
+    </div>
+    <div class="vault-card">
+      <div class="v-badge">DOUBLE-ENTRY</div>
+      <h3>Immutable Ledgers</h3>
+      <p>Guaranteed accounting symmetry where every credit has a corresponding debit on the ledger.</p>
+    </div>
+  </div>
+</section>
   );
 }

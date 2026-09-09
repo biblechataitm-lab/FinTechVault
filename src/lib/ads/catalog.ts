@@ -3,30 +3,130 @@ import { request, mockMode } from './client';
 
 const MOCK_PRODUCTS: Product[] = [
   {
-    "id": "ft-1",
-    "title": "LedgerLock Protocol",
-    "tagline": "Real-time multi-currency settlement engine with automated tax compliance",
-    "description": "Plug-and-play SDK for instant cross-border payouts, reconciliation, and automated regulatory filing.",
-    "logo": "https://placehold.co/96x96/111827/059669?text=LL",
-    "link": "https://example.com/ledgerlock",
-    "category": "Billing & Subscriptions",
+    "id": "ftv-1",
+    "title": "Stripe Billing",
+    "tagline": "Flexible recurring billing, subscription logic, and revenue recognition infrastructure",
+    "link": "https://stripe.com/billing",
+    "category": "Developer Tools",
+    "upvotes": 490,
     "tags": [
-      "fintech",
+      "billing",
       "payments",
-      "compliance"
+      "saas"
+    ],
+    "techStack": [
+      "Ruby",
+      "Java",
+      "API"
+    ],
+    "maker": {
+      "name": "Patrick Collison",
+      "avatar": "https://placehold.co/64x64/e8a55a/0a0d14?text=ST"
+    }
+  },
+  {
+    "id": "ftv-2",
+    "title": "Mercury API",
+    "tagline": "Programmatic commercial banking, multi-entity treasury management, and automated wires",
+    "link": "https://mercury.com",
+    "category": "Automation",
+    "upvotes": 460,
+    "tags": [
+      "banking",
+      "api",
+      "treasury"
+    ],
+    "techStack": [
+      "Haskell",
+      "Postgres"
+    ],
+    "maker": {
+      "name": "Immad Akhund",
+      "avatar": "https://placehold.co/64x64/10b981/0a0d14?text=MC"
+    }
+  },
+  {
+    "id": "ftv-3",
+    "title": "Plaid Link",
+    "tagline": "The universal interface to connect user bank accounts, verify identity, and check balances",
+    "link": "https://plaid.com",
+    "category": "Search & Data",
+    "upvotes": 410,
+    "tags": [
+      "open-banking",
+      "identity",
+      "api"
+    ],
+    "techStack": [
+      "TypeScript",
+      "Go"
+    ],
+    "maker": {
+      "name": "Zach Perret",
+      "avatar": "https://placehold.co/64x64/3b82f6/0a0d14?text=PL"
+    }
+  },
+  {
+    "id": "ftv-4",
+    "title": "Modern Treasury",
+    "tagline": "Real-time payment operations platform to initiate, reconcile, and track money movement",
+    "link": "https://moderntreasury.com",
+    "category": "Automation",
+    "upvotes": 380,
+    "tags": [
+      "payments",
+      "ledger",
+      "ach"
+    ],
+    "techStack": [
+      "Ruby",
+      "PostgreSQL"
+    ],
+    "maker": {
+      "name": "Dimitri Dadiomov",
+      "avatar": "https://placehold.co/64x64/f59e0b/0a0d14?text=MT"
+    }
+  },
+  {
+    "id": "ftv-5",
+    "title": "Ramp Auto",
+    "tagline": "Automated corporate card spend controls, vendor contract negotiation, and accounting sync",
+    "link": "https://ramp.com",
+    "category": "Productivity",
+    "upvotes": 360,
+    "tags": [
+      "cards",
+      "accounting",
+      "erp"
+    ],
+    "techStack": [
+      "Python",
+      "React"
+    ],
+    "maker": {
+      "name": "Eric Glyman",
+      "avatar": "https://placehold.co/64x64/a78bfa/0a0d14?text=RP"
+    }
+  },
+  {
+    "id": "ftv-6",
+    "title": "Lithic",
+    "tagline": "Issue branded physical and virtual debit/credit cards programmatically with custom spend limits",
+    "link": "https://lithic.com",
+    "category": "Developer Tools",
+    "upvotes": 330,
+    "tags": [
+      "card-issuing",
+      "fintech",
+      "api"
     ],
     "techStack": [
       "Go",
-      "PostgreSQL",
-      "Redis"
+      "Kafka"
     ],
-    "coverImages": [],
-    "upvotes": 380,
-    "launchedAt": "2026-08-17T05:12:33.188Z",
     "maker": {
-      "name": "Oliver Sterling",
-      "username": "osterling",
-      "avatar": "https://placehold.co/64x64/1f2937/059669?text=O"
+      "name": "Bo Jiang",
+      "avatar": "https://placehold.co/64x64/ec4899/0a0d14?text=LT"
     }
   }
 ];

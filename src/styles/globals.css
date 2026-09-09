@@ -1771,3 +1771,261 @@ a {
   gap: 16px;
   min-width: 0;
 }
+
+
+/* ==========================================================================
+   FINTECHVAULT — Gold & Obsidian Security Vault Styles
+   ========================================================================== */
+.theme-fintechvault {
+  background-color: #0a0d14;
+  color: #f9fafb;
+}
+.vault-hero { padding: 130px 0 70px; border-bottom: 1px solid rgba(232, 165, 90, 0.2); }
+.vault-hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+@media (max-width: 900px) { .vault-hero-grid { grid-template-columns: 1fr; } }
+.vault-security-tag { display: inline-flex; align-items: center; gap: 8px; padding: 4px 14px; background: rgba(232, 165, 90, 0.1); border: 1px solid rgba(232, 165, 90, 0.3); border-radius: 9999px; font-size: 11px; color: #e8a55a; font-weight: 700; letter-spacing: 1px; margin-bottom: 20px; }
+.vault-lock-dot { width: 8px; height: 8px; border-radius: 50%; background: #e8a55a; }
+.vault-title { font-size: clamp(34px, 4vw, 56px); font-weight: 800; line-height: 1.1; margin-bottom: 16px; }
+.vault-gold { color: #e8a55a; }
+.vault-desc { color: #9ca3af; font-size: 16px; line-height: 1.6; margin-bottom: 24px; }
+.vault-search-box { display: flex; gap: 10px; max-width: 480px; margin-bottom: 20px; }
+.vault-input { flex: 1; background: #121722; border: 1px solid rgba(232, 165, 90, 0.25); border-radius: 8px; padding: 10px 14px; color: #fff; font-size: 14px; outline: none; }
+.vault-btn { background: linear-gradient(135deg, #e8a55a, #d4a017); color: #0a0d14; border: none; border-radius: 8px; padding: 0 20px; font-weight: 700; cursor: pointer; }
+.vault-ticker-tape { display: flex; gap: 16px; font-size: 12px; font-family: monospace; }
+.ticker-green { color: #10b981; }
+.ticker-gold { color: #e8a55a; }
+/* Vault Graphic */
+.vault-door-graphic { display: flex; justify-content: center; }
+.vault-outer-ring { width: 260px; height: 260px; border-radius: 50%; border: 3px solid rgba(232, 165, 90, 0.3); display: flex; align-items: center; justify-content: center; position: relative; background: radial-gradient(circle, #121722 0%, #0a0d14 70%); box-shadow: 0 0 40px rgba(232, 165, 90, 0.15); }
+.vault-wheel { width: 180px; height: 180px; border-radius: 50%; border: 2px dashed rgba(232, 165, 90, 0.4); position: absolute; animation: vaultRotate 20s linear infinite; }
+@keyframes vaultRotate { to { transform: rotate(360deg); } }
+.vault-core-key { z-index: 1; }
+/* Compliance */
+.vault-compliance { padding: 60px 0; }
+.vault-gold-tag { font-size: 11px; color: #e8a55a; letter-spacing: 2px; }
+.vault-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 24px; }
+@media (max-width: 800px) { .vault-grid-3 { grid-template-columns: 1fr; } }
+.vault-card { background: #121722; border: 1px solid rgba(232, 165, 90, 0.2); border-radius: 10px; padding: 24px; }
+.v-badge { font-size: 11px; font-weight: 700; color: #e8a55a; background: rgba(232, 165, 90, 0.1); display: inline-block; padding: 2px 8px; border-radius: 4px; margin-bottom: 12px; }
+.vault-card h3 { font-size: 17px; margin-bottom: 8px; }
+.vault-card p { font-size: 13.5px; color: #9ca3af; line-height: 1.6; }
+/* Nav */
+.vault-navbar { background: #0a0d14; border-bottom: 1px solid rgba(232, 165, 90, 0.2); position: sticky; top: 0; z-index: 100; height: 64px; }
+.vault-nav-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+.vault-brand { display: flex; align-items: center; gap: 8px; font-weight: 700; color: #e8a55a; font-size: 17px; text-decoration: none; }
+.vault-nav-menu { display: flex; gap: 24px; font-size: 14px; }
+.vault-nav-menu a { color: #9ca3af; text-decoration: none; }
+.vault-cta-btn { background: rgba(232, 165, 90, 0.15); border: 1px solid rgba(232, 165, 90, 0.4); color: #e8a55a; padding: 6px 14px; border-radius: 6px; font-size: 13px; text-decoration: none; font-weight: 600; }
+`,
+
+  FlowStack: `
+/* ==========================================================================
+   FLOWSTACK — Automation Node Graph Styles
+   ========================================================================== */
+.theme-flowstack { background-color: #0b0f19; color: #ffffff; }
+.flow-hero { padding: 130px 0 70px; border-bottom: 1px solid rgba(6, 182, 212, 0.2); }
+.flow-hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+@media (max-width: 900px) { .flow-hero-grid { grid-template-columns: 1fr; } }
+.flow-badge { display: inline-flex; align-items: center; gap: 8px; padding: 4px 14px; background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 9999px; font-size: 11px; color: #06b6d4; font-weight: 700; margin-bottom: 20px; }
+.flow-pulse { width: 8px; height: 8px; border-radius: 50%; background: #06b6d4; animation: flowPing 1.5s infinite; }
+@keyframes flowPing { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+.flow-title { font-size: clamp(34px, 4vw, 56px); font-weight: 800; line-height: 1.1; margin-bottom: 16px; }
+.flow-cyan { color: #06b6d4; }
+.flow-desc { color: #94a3b8; font-size: 16px; line-height: 1.6; margin-bottom: 24px; }
+.flow-search-bar { display: flex; gap: 10px; max-width: 480px; }
+.flow-input { flex: 1; background: #121829; border: 1px solid rgba(6, 182, 212, 0.25); border-radius: 8px; padding: 10px 14px; color: #fff; font-size: 14px; outline: none; }
+.flow-btn { background: #06b6d4; color: #0b0f19; border: none; border-radius: 8px; padding: 0 20px; font-weight: 700; cursor: pointer; }
+.flow-node-graph { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.node-box { background: #121829; border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 8px; padding: 14px 20px; width: 220px; text-align: center; }
+.node-type { font-size: 10px; color: #06b6d4; font-weight: 700; display: block; margin-bottom: 4px; }
+.flow-wire { width: 2px; height: 24px; background: rgba(6, 182, 212, 0.4); position: relative; }
+.flow-pulse-particle { width: 6px; height: 6px; border-radius: 50%; background: #06b6d4; position: absolute; left: -2px; animation: flowDrop 1.5s infinite; }
+@keyframes flowDrop { 0% { top: 0; } 100% { top: 100%; } }
+.flow-features { padding: 60px 0; }
+.flow-header { margin-bottom: 32px; }
+.flow-cyan-tag { font-size: 11px; color: #06b6d4; letter-spacing: 2px; }
+.flow-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 800px) { .flow-grid-3 { grid-template-columns: 1fr; } }
+.flow-card { background: #121829; border: 1px solid rgba(6, 182, 212, 0.2); border-radius: 8px; padding: 24px; }
+.flow-card-icon { font-size: 24px; margin-bottom: 12px; }
+.flow-navbar { background: #0b0f19; border-bottom: 1px solid rgba(6, 182, 212, 0.2); position: sticky; top: 0; z-index: 100; height: 64px; }
+.flow-nav-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+.flow-brand { display: flex; align-items: center; gap: 8px; font-weight: 700; color: #06b6d4; font-size: 18px; text-decoration: none; }
+.flow-logo-glyph { font-size: 20px; }
+.flow-nav-menu { display: flex; gap: 24px; font-size: 14px; }
+.flow-nav-menu a { color: #94a3b8; text-decoration: none; }
+.flow-cta-btn { background: rgba(6, 182, 212, 0.15); border: 1px solid rgba(6, 182, 212, 0.4); color: #06b6d4; padding: 6px 14px; border-radius: 6px; font-size: 13px; text-decoration: none; font-weight: 600; }
+`,
+
+  SecOpsDaily: `
+/* ==========================================================================
+   SECOPSDAILY — Cyber Threat Matrix Styles
+   ========================================================================== */
+.theme-secopsdaily { background-color: #050811; color: #f1f5f9; font-family: monospace; }
+.secops-hero { padding: 130px 0 70px; border-bottom: 1px solid rgba(239, 68, 68, 0.25); }
+.secops-hero-container { max-width: 800px; margin: 0 auto; text-align: center; }
+.secops-alert-banner { display: inline-flex; align-items: center; gap: 8px; padding: 4px 16px; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.4); border-radius: 4px; font-size: 11px; color: #ef4444; font-weight: 700; margin-bottom: 24px; }
+.secops-beacon { width: 8px; height: 8px; border-radius: 50%; background: #ef4444; animation: secopsFlash 1s infinite; }
+@keyframes secopsFlash { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+.secops-title { font-size: clamp(34px, 5vw, 60px); font-weight: 800; line-height: 1.1; margin-bottom: 16px; letter-spacing: -1px; }
+.secops-red { color: #ef4444; }
+.secops-desc { color: #94a3b8; font-size: 16px; line-height: 1.6; margin-bottom: 28px; }
+.secops-search { display: flex; max-width: 540px; margin: 0 auto 28px; background: #0d1322; border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 6px; padding: 6px 10px; align-items: center; gap: 10px; }
+.secops-prompt { color: #ef4444; font-weight: 700; }
+.secops-input { flex: 1; background: transparent; border: none; color: #f1f5f9; font-family: inherit; font-size: 14px; outline: none; }
+.secops-btn { background: #ef4444; color: #fff; border: none; border-radius: 4px; padding: 8px 16px; font-family: inherit; font-weight: 700; cursor: pointer; }
+.secops-threat-hud { display: flex; justify-content: center; gap: 24px; font-size: 12px; }
+.hud-item { background: #0d1322; border: 1px solid #1e293b; padding: 6px 14px; border-radius: 4px; }
+.hud-num { color: #ef4444; font-weight: 700; }
+.hud-green { color: #10b981; font-weight: 700; }
+.secops-matrix { padding: 60px 0; }
+.secops-red-tag { color: #ef4444; font-size: 11px; letter-spacing: 2px; }
+.secops-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 24px; }
+@media (max-width: 800px) { .secops-grid-3 { grid-template-columns: 1fr; } }
+.secops-card { background: #0d1322; border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 6px; padding: 24px; }
+.secops-tag { font-size: 10px; color: #ef4444; font-weight: 700; display: block; margin-bottom: 8px; }
+.secops-card h3 { font-size: 16px; margin-bottom: 8px; }
+.secops-card p { font-size: 13px; color: #94a3b8; line-height: 1.6; }
+.secops-navbar { background: #050811; border-bottom: 1px solid rgba(239, 68, 68, 0.2); position: sticky; top: 0; z-index: 100; height: 60px; font-family: monospace; }
+.secops-nav-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+.secops-brand { display: flex; align-items: center; gap: 8px; font-weight: 700; color: #ef4444; font-size: 16px; text-decoration: none; }
+.secops-nav-links { display: flex; gap: 20px; font-size: 13px; }
+.secops-nav-links a { color: #94a3b8; text-decoration: none; }
+.secops-cta-btn { background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); color: #ef4444; padding: 6px 14px; border-radius: 4px; font-size: 12px; text-decoration: none; font-weight: 700; }
+`,
+
+  PromptBaseDaily: `
+/* ==========================================================================
+   PROMPTBASEDAILY — Magic Prompt Playground Styles
+   ========================================================================== */
+.theme-promptbase { background-color: #07060e; color: #faf5ff; }
+.prompt-hero { padding: 130px 0 70px; border-bottom: 1px solid rgba(217, 70, 239, 0.2); }
+.prompt-hero-container { max-width: 840px; margin: 0 auto; text-align: center; }
+.prompt-sparkle-tag { display: inline-block; padding: 4px 16px; background: rgba(217, 70, 239, 0.12); border: 1px solid rgba(217, 70, 239, 0.35); border-radius: 9999px; font-size: 11px; color: #d946ef; font-weight: 700; margin-bottom: 20px; }
+.prompt-title { font-size: clamp(34px, 5vw, 60px); font-weight: 800; line-height: 1.1; margin-bottom: 16px; }
+.prompt-neon { color: #d946ef; text-shadow: 0 0 20px rgba(217, 70, 239, 0.5); }
+.prompt-desc { color: #a89fc4; font-size: 16px; line-height: 1.6; margin-bottom: 28px; }
+.prompt-playground-card { background: #120f24; border: 1px solid rgba(217, 70, 239, 0.3); border-radius: 14px; padding: 24px; text-align: left; box-shadow: 0 16px 40px rgba(217, 70, 239, 0.12); }
+.playground-header { display: flex; justify-content: space-between; margin-bottom: 14px; font-size: 12px; }
+.p-model-chip { background: #221c3d; color: #d946ef; padding: 2px 10px; border-radius: 9999px; font-weight: 600; }
+.p-temp-chip { color: #a89fc4; }
+.playground-body { background: #07060e; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 14px; font-family: monospace; font-size: 13px; color: #e9d5ff; line-height: 1.6; margin-bottom: 16px; }
+.playground-actions { display: flex; justify-content: space-between; align-items: center; }
+.copy-prompt-btn { background: linear-gradient(135deg, #d946ef, #8b5cf6); color: #fff; border: none; padding: 8px 18px; border-radius: 8px; font-weight: 600; font-size: 13px; cursor: pointer; }
+.p-token-count { font-size: 12px; color: #a89fc4; }
+.prompt-features { padding: 60px 0; }
+.prompt-neon-tag { color: #d946ef; font-size: 11px; letter-spacing: 2px; }
+.prompt-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 24px; }
+@media (max-width: 800px) { .prompt-grid-3 { grid-template-columns: 1fr; } }
+.prompt-card { background: #120f24; border: 1px solid rgba(217, 70, 239, 0.2); border-radius: 12px; padding: 24px; }
+.p-icon { font-size: 24px; margin-bottom: 10px; }
+.prompt-navbar { background: rgba(7, 6, 14, 0.88); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(217, 70, 239, 0.2); position: sticky; top: 0; z-index: 100; height: 64px; }
+.prompt-nav-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+.prompt-brand { display: flex; align-items: center; gap: 8px; font-weight: 700; color: #d946ef; font-size: 17px; text-decoration: none; }
+.prompt-nav-links { display: flex; gap: 24px; font-size: 14px; }
+.prompt-nav-links a { color: #a89fc4; text-decoration: none; }
+.prompt-cta-btn { background: rgba(217, 70, 239, 0.15); border: 1px solid rgba(217, 70, 239, 0.4); color: #d946ef; padding: 6px 14px; border-radius: 8px; font-size: 13px; text-decoration: none; font-weight: 600; }
+`,
+
+  AppLaunchDaily: `
+/* ==========================================================================
+   APPLAUNCHDAILY — Rocket Launchpad & Podium Styles
+   ========================================================================== */
+.theme-applaunch { background-color: #141210; color: #fafaf9; }
+.launch-hero { padding: 130px 0 70px; border-bottom: 1px solid rgba(255, 87, 34, 0.2); }
+.launch-hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+@media (max-width: 900px) { .launch-hero-grid { grid-template-columns: 1fr; } }
+.launch-countdown-tag { display: inline-flex; align-items: center; gap: 8px; padding: 4px 14px; background: rgba(255, 87, 34, 0.1); border: 1px solid rgba(255, 87, 34, 0.3); border-radius: 9999px; font-size: 11px; color: #ff5722; font-weight: 700; margin-bottom: 20px; }
+.launch-title { font-size: clamp(34px, 4vw, 56px); font-weight: 800; line-height: 1.1; margin-bottom: 16px; }
+.launch-coral { color: #ff5722; }
+.launch-desc { color: #a8a29e; font-size: 16px; line-height: 1.6; margin-bottom: 24px; }
+.launch-search-bar { display: flex; gap: 10px; max-width: 480px; }
+.launch-input { flex: 1; background: #1f1b17; border: 1px solid rgba(255, 87, 34, 0.25); border-radius: 8px; padding: 10px 14px; color: #fff; font-size: 14px; outline: none; }
+.launch-btn { background: #ff5722; color: #fff; border: none; border-radius: 8px; padding: 0 20px; font-weight: 700; cursor: pointer; }
+.podium-card { background: #1f1b17; border-radius: 10px; padding: 18px; margin-bottom: 12px; }
+.podium-first { border: 1px solid #ffb300; box-shadow: 0 0 20px rgba(255, 179, 0, 0.15); }
+.podium-second { border: 1px solid rgba(255, 255, 255, 0.15); }
+.podium-rank { font-size: 11px; font-weight: 800; color: #ffb300; margin-bottom: 6px; }
+.podium-content h4 { font-size: 17px; margin-bottom: 4px; }
+.podium-content p { font-size: 13px; color: #a8a29e; margin-bottom: 8px; }
+.podium-votes { font-size: 12px; font-weight: 700; color: #ff5722; }
+.launch-features { padding: 60px 0; }
+.launch-tag { color: #ff5722; font-size: 11px; letter-spacing: 2px; }
+.launch-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 24px; }
+@media (max-width: 800px) { .launch-grid-3 { grid-template-columns: 1fr; } }
+.launch-f-card { background: #1f1b17; border: 1px solid rgba(255, 87, 34, 0.2); border-radius: 10px; padding: 24px; }
+.l-icon { font-size: 24px; margin-bottom: 10px; }
+.launch-navbar { background: #141210; border-bottom: 1px solid rgba(255, 87, 34, 0.2); position: sticky; top: 0; z-index: 100; height: 64px; }
+.launch-nav-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+.launch-brand { display: flex; align-items: center; gap: 8px; font-weight: 700; color: #ff5722; font-size: 17px; text-decoration: none; }
+.launch-nav-menu { display: flex; gap: 24px; font-size: 14px; }
+.launch-nav-menu a { color: #a8a29e; text-decoration: none; }
+.launch-cta-btn { background: #ff5722; color: #fff; padding: 6px 14px; border-radius: 8px; font-size: 13px; text-decoration: none; font-weight: 700; }
+`,
+
+  CloudStackHunt: `
+/* ==========================================================================
+   CLOUDSTACKHUNT — Cloud Topology & Region Styles
+   ========================================================================== */
+.theme-cloudstack { background-color: #080e1a; color: #f8fafc; }
+.cloud-hero { padding: 130px 0 70px; border-bottom: 1px solid rgba(56, 189, 248, 0.2); }
+.cloud-hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+@media (max-width: 900px) { .cloud-hero-grid { grid-template-columns: 1fr; } }
+.cloud-telemetry-tag { display: inline-flex; align-items: center; gap: 8px; padding: 4px 14px; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 9999px; font-size: 11px; color: #38bdf8; font-weight: 700; margin-bottom: 20px; }
+.cloud-dot { width: 8px; height: 8px; border-radius: 50%; background: #38bdf8; }
+.cloud-title { font-size: clamp(34px, 4vw, 56px); font-weight: 800; line-height: 1.1; margin-bottom: 16px; }
+.cloud-blue { color: #38bdf8; }
+.cloud-desc { color: #94a3b8; font-size: 16px; line-height: 1.6; margin-bottom: 24px; }
+.cloud-search-bar { display: flex; gap: 10px; max-width: 480px; }
+.cloud-input { flex: 1; background: #0f172a; border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 8px; padding: 10px 14px; color: #fff; font-size: 14px; outline: none; }
+.cloud-btn { background: #38bdf8; color: #080e1a; border: none; border-radius: 8px; padding: 0 20px; font-weight: 700; cursor: pointer; }
+.cloud-region-monitor { background: #0f172a; border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 10px; padding: 20px; font-family: monospace; font-size: 13px; }
+.region-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #1e293b; }
+.region-row:last-child { border-bottom: none; }
+.ping-green { color: #38bdf8; }
+.cloud-features { padding: 60px 0; }
+.cloud-blue-tag { color: #38bdf8; font-size: 11px; letter-spacing: 2px; }
+.cloud-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 24px; }
+@media (max-width: 800px) { .cloud-grid-3 { grid-template-columns: 1fr; } }
+.cloud-card { background: #0f172a; border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 10px; padding: 24px; }
+.c-icon { font-size: 24px; margin-bottom: 10px; }
+.cloud-navbar { background: #080e1a; border-bottom: 1px solid rgba(56, 189, 248, 0.2); position: sticky; top: 0; z-index: 100; height: 64px; }
+.cloud-nav-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+.cloud-brand { display: flex; align-items: center; gap: 8px; font-weight: 700; color: #38bdf8; font-size: 17px; text-decoration: none; }
+.cloud-nav-menu { display: flex; gap: 24px; font-size: 14px; }
+.cloud-nav-menu a { color: #94a3b8; text-decoration: none; }
+.cloud-cta-btn { background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; padding: 6px 14px; border-radius: 6px; font-size: 13px; text-decoration: none; font-weight: 600; }
+`,
+
+  'saasai-hunt': `
+/* ==========================================================================
+   SAASAI-HUNT — Swiss International Dark Obsidian Styles
+   ========================================================================== */
+.theme-saasai { background-color: #09090b; color: #f4f4f5; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+.swiss-hero { padding: 130px 0 70px; border-bottom: 2px solid #27272a; }
+.swiss-grid-meta { display: flex; gap: 24px; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #71717a; margin-bottom: 20px; text-transform: uppercase; }
+.swiss-red-badge { color: #e63946; }
+.swiss-hero-box { border-left: 4px solid #e63946; padding-left: 28px; }
+.swiss-title { font-size: clamp(36px, 5.5vw, 68px); font-weight: 900; line-height: 1.05; letter-spacing: -2px; margin-bottom: 16px; }
+.swiss-red-text { color: #e63946; }
+.swiss-desc { color: #a1a1aa; font-size: 18px; line-height: 1.6; max-width: 640px; margin-bottom: 28px; }
+.swiss-search-wrap { display: flex; gap: 8px; max-width: 500px; }
+.swiss-input { flex: 1; background: #121215; border: 1px solid #27272a; border-radius: 0; padding: 12px 16px; color: #fff; font-family: monospace; font-size: 13px; outline: none; }
+.swiss-search-btn { background: #e63946; color: #fff; border: none; border-radius: 0; padding: 0 24px; font-weight: 800; letter-spacing: 1px; cursor: pointer; }
+.swiss-grid-section { padding: 60px 0; }
+.swiss-section-header { margin-bottom: 32px; }
+.swiss-label { font-size: 11px; font-family: monospace; color: #e63946; letter-spacing: 2px; }
+.swiss-table-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #27272a; border-bottom: 1px solid #27272a; }
+@media (max-width: 800px) { .swiss-table-grid { grid-template-columns: 1fr; } }
+.swiss-cell { padding: 32px 24px; border-right: 1px solid #27272a; }
+.swiss-cell:last-child { border-right: none; }
+.swiss-idx { font-family: monospace; font-size: 13px; color: #e63946; display: block; margin-bottom: 12px; font-weight: 700; }
+.swiss-cell h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.5px; }
+.swiss-cell p { font-size: 14px; color: #a1a1aa; line-height: 1.6; }
+.swiss-navbar { background: #09090b; border-bottom: 1px solid #27272a; position: sticky; top: 0; z-index: 100; height: 64px; }
+.swiss-nav-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+.swiss-logo { display: flex; align-items: center; gap: 8px; font-weight: 900; font-size: 16px; letter-spacing: 1px; color: #fff; text-decoration: none; }
+.swiss-cross { color: #e63946; font-size: 20px; font-weight: 900; }
+.swiss-nav-links { display: flex; gap: 24px; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; }
+.swiss-nav-links a { color: #a1a1aa; text-decoration: none; }
+.swiss-submit-btn { border: 1px solid #e63946; color: #e63946; padding: 6px 14px; font-size: 11px; font-weight: 800; letter-spacing: 1px; text-decoration: none; }

@@ -1,70 +1,25 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
-import { Search, TrendingUp, PlusCircle, Menu, X } from 'lucide-react';
+import React from 'react';
 
 export function Header({ siteName = 'FinTechVault' }: { siteName?: string }) {
-  const headerRef = useRef<HTMLDivElement>(null);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const router = useRouter();
-  const pathname = usePathname();
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  useEffect(() => {
-    if (headerRef.current) {
-      headerRef.current.style.opacity = '0';
-      requestAnimationFrame(() => {
-        if (headerRef.current) {
-          headerRef.current.style.transition = 'opacity 0.4s ease';
-          headerRef.current.style.opacity = '1';
-        }
-      });
-    }
-  }, []);
-
-  const handleSearchSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
-  };
-
   return (
-    <header ref={headerRef} className={`ftv-nav ${scrolled ? 'ftv-nav-scrolled' : ''}`}>
-      <div className="ftv-nav-inner">
-        <a href="/" className="ftv-nav-brand">
-          <span className="ftv-nav-brand-text">{siteName}</span>
-        </a>
-        <form onSubmit={handleSearchSubmit} className="ftv-nav-search">
-          <Search size={14} className="ftv-nav-search-icon" />
-          <input type="text" placeholder="Search..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
-        </form>
-        <nav className="ftv-nav-links">
-          <a href="/trends" className={`ftv-nav-link ${pathname === '/trends' ? 'active' : ''}`}>
-            <TrendingUp size={13} /> Trends
-          </a>
-          <a href="/sponsor" className={`ftv-nav-link ${pathname === '/sponsor' ? 'active' : ''}`}>Sponsor</a>
-          <a href="/submit" className="ftv-nav-cta"><PlusCircle size={14} /> Submit</a>
-        </nav>
-        <button className="ftv-nav-mobile-toggle" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
-          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
+    <header class="vault-navbar">
+  <div class="container vault-nav-inner">
+    <a href="/" class="vault-brand">
+      <div class="vault-logo-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e8a55a" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
       </div>
-      {mobileOpen && (
-        <div className="ftv-nav-mobile-menu">
-          <a href="/trends" onClick={() => setMobileOpen(false)}>Trends</a>
-          <a href="/sponsor" onClick={() => setMobileOpen(false)}>Sponsor</a>
-          <a href="/submit" onClick={() => setMobileOpen(false)}>Submit</a>
-          <a href="/about" onClick={() => setMobileOpen(false)}>About</a>
-        </div>
-      )}
-    </header>
+      <span>FinTechVault</span>
+    </a>
+    <div class="vault-nav-menu">
+      <a href="/">Vault Registry</a>
+      <a href="/trends">High-Throughput</a>
+      <a href="/category/developer-tools">Banking APIs</a>
+      <a href="/sponsor">Underwrite</a>
+    </div>
+    <a href="/submit" class="vault-cta-btn">+ Vault Instrument</a>
+  </div>
+</header>
   );
 }
