@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { Landmark, CreditCard, ShieldCheck, ArrowRight, CheckCircle2, DollarSign, RefreshCw, Lock, Zap } from 'lucide-react';
 
 export function LandingSections() {
@@ -150,12 +149,12 @@ export function LandingSections() {
             Connect directly with FinTech founders, neo-banks, and enterprise finance teams searching for modern rails.
           </p>
           <div className="launch-cta-buttons">
-            <Link href="/submit" className="launch-cta-primary">
+            <a href="/submit" className="launch-cta-primary">
               Submit FinTech API <ArrowRight size={15} />
-            </Link>
-            <Link href="/category/finance" className="launch-cta-secondary">
+            </a>
+            <a href="/category/finance" className="launch-cta-secondary">
               Explore Payment Rails
-            </Link>
+            </a>
           </div>
         </div>
       </section>

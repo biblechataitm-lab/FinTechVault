@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { Search, TrendingUp, PlusCircle, Menu, X } from 'lucide-react';
 
@@ -40,19 +39,19 @@ export function Header({ siteName = 'FinTechVault' }: { siteName?: string }) {
   return (
     <header ref={headerRef} className={`ftv-nav ${scrolled ? 'ftv-nav-scrolled' : ''}`}>
       <div className="ftv-nav-inner">
-        <Link href="/" className="ftv-nav-brand">
+        <a href="/" className="ftv-nav-brand">
           <span className="ftv-nav-brand-text">{siteName}</span>
-        </Link>
+        </a>
         <form onSubmit={handleSearchSubmit} className="ftv-nav-search">
           <Search size={14} className="ftv-nav-search-icon" />
           <input type="text" placeholder="Search..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
         </form>
         <nav className="ftv-nav-links">
-          <Link href="/trends" className={`ftv-nav-link ${pathname === '/trends' ? 'active' : ''}`}>
+          <a href="/trends" className={`ftv-nav-link ${pathname === '/trends' ? 'active' : ''}`}>
             <TrendingUp size={13} /> Trends
-          </Link>
-          <Link href="/sponsor" className={`ftv-nav-link ${pathname === '/sponsor' ? 'active' : ''}`}>Sponsor</Link>
-          <Link href="/submit" className="ftv-nav-cta"><PlusCircle size={14} /> Submit</Link>
+          </a>
+          <a href="/sponsor" className={`ftv-nav-link ${pathname === '/sponsor' ? 'active' : ''}`}>Sponsor</a>
+          <a href="/submit" className="ftv-nav-cta"><PlusCircle size={14} /> Submit</a>
         </nav>
         <button className="ftv-nav-mobile-toggle" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
           {mobileOpen ? <X size={20} /> : <Menu size={20} />}
@@ -60,10 +59,10 @@ export function Header({ siteName = 'FinTechVault' }: { siteName?: string }) {
       </div>
       {mobileOpen && (
         <div className="ftv-nav-mobile-menu">
-          <Link href="/trends" onClick={() => setMobileOpen(false)}>Trends</Link>
-          <Link href="/sponsor" onClick={() => setMobileOpen(false)}>Sponsor</Link>
-          <Link href="/submit" onClick={() => setMobileOpen(false)}>Submit</Link>
-          <Link href="/about" onClick={() => setMobileOpen(false)}>About</Link>
+          <a href="/trends" onClick={() => setMobileOpen(false)}>Trends</a>
+          <a href="/sponsor" onClick={() => setMobileOpen(false)}>Sponsor</a>
+          <a href="/submit" onClick={() => setMobileOpen(false)}>Submit</a>
+          <a href="/about" onClick={() => setMobileOpen(false)}>About</a>
         </div>
       )}
     </header>
