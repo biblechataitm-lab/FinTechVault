@@ -3,10 +3,10 @@
 import React from 'react';
 
 const STATS = [
-  { value: '1,200+', label: 'FinTech Products' },
-  { value: '15K+', label: 'Finance Pros' },
-  { value: '$2.1T', label: 'Market Tracked' },
-  { value: '99.5%', label: 'Data Accuracy' },
+  { value: '100%', label: 'Direct Maker Submissions' },
+  { value: 'Realtime', label: 'Verified Catalog Releases' },
+  { value: 'Community', label: 'Upvote & Feedback Engine' },
+  { value: 'Zero Tracking', label: 'Privacy First Directory' },
 ];
 
 export function StatsSection() {

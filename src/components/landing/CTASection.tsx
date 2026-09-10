@@ -9,7 +9,7 @@ export function CTASection() {
       <div className="ftv-cta-glow" aria-hidden="true" />
       <div className="ftv-cta-content">
         <h2 className="ftv-cta-title">List Your FinTech Product</h2>
-        <p className="ftv-cta-subtitle">Get discovered by 15K+ finance professionals, CTOs, and institutional investors.</p>
+        <p className="ftv-cta-subtitle">Get discovered by finance professionals, CTOs, and institutional investors.</p>
         <div className="ftv-cta-buttons">
           <a href="/submit" className="ftv-cta-btn-primary">
             <Rocket size={15} /> Submit Product
